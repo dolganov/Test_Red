@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Master Suit" parallel="classes" thread-count="3">
+<!--    <listeners>-->
+<!--        <listener class-name="listeners.Listeners"/>-->
+<!--    </listeners>-->
+    <parameter name="url" value="https://www.reddit.com/login/"/>
+    <parameter name="username" value="__________"/>
+    <parameter name="password" value="__________"/>
+    <parameter name="browser" value="chrome"/>
+    <test name="All tests">
+        <classes>
+            <class name="baseTest.LoginTest">
+                <methods>
+                    <include name="loginTest_loginWithCorrectCredentials_mainPageOpened"/>
+                    <include name="loginTest_loginWithUnCorrectCredentials_mainPageOpened"/>
+                    <include name="serchFieldTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
